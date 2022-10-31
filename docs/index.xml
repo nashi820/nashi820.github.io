@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>月刊基地moratorium</title>
+    <link>https://nashi820.github.io/</link>
+    <description>Recent content on 月刊基地moratorium</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 31 Oct 2022 00:28:56 +0900</lastBuildDate><atom:link href="https://nashi820.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about</title>
+      <link>https://nashi820.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nashi820.github.io/about/</guid>
+      <description>著者近影（ピンク髪ツインテール美少女） 大学院（情報学）を卒業してしまったオタク。趣味はラノベとインターネット。モラトリアムが苦しかったのにモラトリアムが恋しい。</description>
+    </item>
+    
+    <item>
+      <title>Hello World!</title>
+      <link>https://nashi820.github.io/post/2022/10/31/hello-world/</link>
+      <pubDate>Mon, 31 Oct 2022 00:28:56 +0900</pubDate>
+      
+      <guid>https://nashi820.github.io/post/2022/10/31/hello-world/</guid>
+      <description>Hello World!</description>
+    </item>
+    
+  </channel>
+</rss>

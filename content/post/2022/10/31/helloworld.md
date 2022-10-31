@@ -1,7 +1,6 @@
 +++
 title = "Hello World!"
 date = 2022-10-31T00:28:56+09:00
-draft = true
 categories = [
     "test",
 ]
