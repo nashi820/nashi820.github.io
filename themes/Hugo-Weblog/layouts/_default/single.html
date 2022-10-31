@@ -1,0 +1,29 @@
+{{ define "title" }} {{ .Title }} &ndash; 
+{{ .Site.Title }} {{ end }} 
+
+{{ define "main" }}
+<main>
+  <!--セクション名: {{ with .Section }}{{ . }}{{ else }}なし{{ end }}-->
+
+  <div style="margin-top: 30px;margin-bottom: 30px;">
+    <h1 style="font-family: 'Times New Roman', Times, serif; font-weight: 700;">
+    <!--<h1 style="font-family: 'Dela Gothic One', cursive;">-->
+      {{ .Page.Title }} 
+    </h1>
+
+    <div style="font-size: 20px;">
+      {{ if ne .RelPermalink "/about/" }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02"}}</time>
+      {{ end }}
+      {{ partial "categories-list" . }}
+    </div>
+
+    <hr>
+  </div>
+
+  <article id="content">
+    {{ .Content }}
+  </article>
+
+</main>
+{{ end }}
