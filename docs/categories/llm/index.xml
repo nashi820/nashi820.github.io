@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>月刊基地moratorium</title>
-    <link>https://nashi820.github.io/</link>
-    <description>Recent content on 月刊基地moratorium</description>
+    <title>llm on 月刊基地moratorium</title>
+    <link>https://nashi820.github.io/categories/llm/</link>
+    <description>Recent content in llm on 月刊基地moratorium</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 May 2023 23:20:03 +0900</lastBuildDate><atom:link href="https://nashi820.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>about</title>
-      <link>https://nashi820.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://nashi820.github.io/about/</guid>
-      <description>著者近影（ピンク髪ツインテール美少女） 大学院（情報学）を卒業してしまったオタク。通信企業でシステムエンジニアをしている。趣味はラノベとインターネット。モラトリアムが苦しかったのにモラトリアムが恋しい。</description>
-    </item>
-    
+    <lastBuildDate>Wed, 24 May 2023 23:20:03 +0900</lastBuildDate><atom:link href="https://nashi820.github.io/categories/llm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ChatGPTのOpenAI APIを実行</title>
       <link>https://nashi820.github.io/post/2023/05/24/chatgpt%E3%81%AEopenai-api%E3%82%92%E5%AE%9F%E8%A1%8C/</link>
@@ -25,15 +16,6 @@
       <description>1）参考 クイックスタート：https://platform.openai.com/docs/quickstart APIレファレンス：https://platform.openai.com/docs/api-reference/introduction openai-python GitHub：https://github.com/openai/openai-python 2）仮想環境の構築 1 2 3 % python3 -m venv chatgpt-venv # 仮想環境の作成 % source chatgpt-venv/bin/activate # 仮想環境の有効化 参考） % deactivate # 仮想環境の非有効化 3）OpenAI APIの実行コード 準備：
 1 % pip install openai 1 % export OPENAI_API_KEY=&amp;#34;xxxxx&amp;#34; # Keyを環境変数にセット コード：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 import os import openai # organizationの設定 openai.organization = &amp;#34;xxxxx&amp;#34; # Load your API key from an environment variable or secret management service openai.</description>
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>https://nashi820.github.io/post/2022/10/31/hello-world/</link>
-      <pubDate>Mon, 31 Oct 2022 00:28:56 +0900</pubDate>
-      
-      <guid>https://nashi820.github.io/post/2022/10/31/hello-world/</guid>
-      <description>Hello World!</description>
     </item>
     
   </channel>

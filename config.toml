@@ -93,4 +93,6 @@ series = "series"
     [params.categories.test]
       name="テスト"
       color="badge-danger"
-
+    [params.categories.llm]
+      name="LLM"
+      color="badge-primary"

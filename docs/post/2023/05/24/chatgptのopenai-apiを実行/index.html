@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <body style="background-color:#F4F5F7;">
+    <div class="container" style="max-width:900px;">
+    <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Hugo 0.104.3" />
+  <title> 月刊基地moratorium </title>
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/syntax-highlight.css">
+
+  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+</head><nav class="navbar navbar-light" style="background-color: black;">
+
+<div class="head__inner">
+  <header id="banner">
+    <h2><a href="https://nashi820.github.io" style="color:white;font-family: 'Dela Gothic One', cursive;">月刊基地moratorium</a></h2>
+  </header>
+</div>
+
+<ul id="nav-links" class="list-inline mb-1">
+    
+    
+        <li class="list-inline-item">
+          <a href="/about/" title="" style="color: white;font-weight: bold;">
+            About
+          </a>
+        </li>
+    
+</ul>
+
+</nav>
+<main>
+  
+
+  <div style="margin-top: 30px;margin-bottom: 30px;">
+    <h1 style="font-family: 'Times New Roman', Times, serif; font-weight: 700;">
+    
+      ChatGPTのOpenAI APIを実行 
+    </h1>
+
+    <div style="font-size: 20px;">
+      
+      <time datetime="2023-05-24">2023/05/24</time>
+      
+      
+    
+
+    
+      
+        <span class="badge badge-primary badge;">
+          #LLM
+        </span>
+      
+    
+      
+    
+
+    </div>
+
+    <hr>
+  </div>
+
+  <article id="content">
+    <h3 id="1参考">1）参考</h3>
+<ul>
+<li>クイックスタート：https://platform.openai.com/docs/quickstart</li>
+<li>APIレファレンス：https://platform.openai.com/docs/api-reference/introduction</li>
+<li>openai-python GitHub：https://github.com/openai/openai-python</li>
+</ul>
+<p> </p>
+<h3 id="2仮想環境の構築">2）仮想環境の構築</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% python3 -m venv chatgpt-venv      # 仮想環境の作成
+</span></span><span class="line"><span class="cl">% source chatgpt-venv/bin/activate  # 仮想環境の有効化
+</span></span><span class="line"><span class="cl">参考） % deactivate                   # 仮想環境の非有効化
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="3openai-apiの実行コード">3）OpenAI APIの実行コード</h3>
+<p>準備：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% pip install openai
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% export OPENAI_API_KEY=&#34;xxxxx&#34;  # Keyを環境変数にセット
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>コード：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">openai</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># organizationの設定</span>
+</span></span><span class="line"><span class="cl"><span class="n">openai</span><span class="o">.</span><span class="n">organization</span> <span class="o">=</span> <span class="s2">&#34;xxxxx&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load your API key from an environment variable or secret management service</span>
+</span></span><span class="line"><span class="cl"><span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;OPENAI_API_KEY&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">Completion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;text-davinci-003&#34;</span><span class="p">,</span>  <span class="c1"># モデルの指定</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prompt</span><span class="o">=</span><span class="s2">&#34;こんにちは。お元気ですか？&#34;</span><span class="p">,</span>  <span class="c1"># 俗に言うプロンプト</span>
+</span></span><span class="line"><span class="cl">    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># 出力の揺らぎ（0の場合、出力は固定される）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span>  <span class="c1"># レスポンスの最大トークン数</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># レスポンスを出力</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p> </p>
+<h3 id="4実行結果">4）実行結果</h3>
+<p>レスポンスは以下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">  &#34;choices&#34;: [
+</span></span><span class="line"><span class="cl">    {
+</span></span><span class="line"><span class="cl">      &#34;finish_reason&#34;: &#34;stop&#34;,
+</span></span><span class="line"><span class="cl">      &#34;index&#34;: 0,
+</span></span><span class="line"><span class="cl">      &#34;logprobs&#34;: null,
+</span></span><span class="line"><span class="cl">      &#34;text&#34;: &#34;\n\n\u306f\u3044\u3001\u5143\u6c17\u3067\u3059\u3002\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002&#34;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">  ],
+</span></span><span class="line"><span class="cl">  &#34;created&#34;: xxxxxxxxxx,
+</span></span><span class="line"><span class="cl">  &#34;id&#34;: &#34;xxxxxxxxxx&#34;,
+</span></span><span class="line"><span class="cl">  &#34;model&#34;: &#34;text-davinci-003&#34;,
+</span></span><span class="line"><span class="cl">  &#34;object&#34;: &#34;text_completion&#34;,
+</span></span><span class="line"><span class="cl">  &#34;usage&#34;: {
+</span></span><span class="line"><span class="cl">    &#34;completion_tokens&#34;: 25,
+</span></span><span class="line"><span class="cl">    &#34;prompt_tokens&#34;: 19,
+</span></span><span class="line"><span class="cl">    &#34;total_tokens&#34;: 44
+</span></span><span class="line"><span class="cl">  }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nbsp"> </h2>
+<h3 id="参考エラー情報">参考）エラー情報</h3>
+<ul>
+<li>APIを叩いたが以下のエラーが出た。クレジットカード情報を登録していなかったためらしい。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">openai.error.RateLimitError: You exceeded your current quota, please check your plan and billing details.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://qiita.com/kotattsu3/items/d6533adc785ee8509e2c">https://qiita.com/kotattsu3/items/d6533adc785ee8509e2c</a></p>
+
+  </article>
+
+</main>
+</div>
+  </body>
+
+</html>

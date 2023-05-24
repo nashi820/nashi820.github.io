@@ -6,11 +6,20 @@
     <description>Recent content in Categories on 月刊基地moratorium</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 13 May 2023 21:59:50 +0900</lastBuildDate><atom:link href="https://nashi820.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 May 2023 23:20:03 +0900</lastBuildDate><atom:link href="https://nashi820.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>llm</title>
+      <link>https://nashi820.github.io/categories/llm/</link>
+      <pubDate>Wed, 24 May 2023 23:20:03 +0900</pubDate>
+      
+      <guid>https://nashi820.github.io/categories/llm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>test</title>
       <link>https://nashi820.github.io/categories/test/</link>
-      <pubDate>Sat, 13 May 2023 21:59:50 +0900</pubDate>
+      <pubDate>Mon, 31 Oct 2022 00:28:56 +0900</pubDate>
       
       <guid>https://nashi820.github.io/categories/test/</guid>
       <description></description>
