@@ -42,8 +42,7 @@
   
 
   <div style="margin-top: 30px;margin-bottom: 30px;">
-    <h1 style="font-family: 'Times New Roman', Times, serif; font-weight: 700;">
-    
+    <h1 style="font-weight: 700;">
       ChatGPTのOpenAI APIを実行 
     </h1>
 
@@ -69,12 +68,12 @@
     <hr>
   </div>
 
-  <article id="content">
+  <article class="content">
     <h3 id="1参考">1）参考</h3>
 <ul>
-<li>クイックスタート：https://platform.openai.com/docs/quickstart</li>
-<li>APIレファレンス：https://platform.openai.com/docs/api-reference/introduction</li>
-<li>openai-python GitHub：https://github.com/openai/openai-python</li>
+<li>openaiクイックスタート： <a href="https://platform.openai.com/docs/quickstart">https://platform.openai.com/docs/quickstart</a></li>
+<li>OpenAI APIレファレンス： <a href="https://platform.openai.com/docs/api-reference/introduction">https://platform.openai.com/docs/api-reference/introduction</a></li>
+<li>openai-python GitHub： <a href="https://github.com/openai/openai-python">https://github.com/openai/openai-python</a></li>
 </ul>
 <p> </p>
 <h3 id="2仮想環境の構築">2）仮想環境の構築</h3>
@@ -85,9 +84,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% python3 -m venv chatgpt-venv      # 仮想環境の作成
-</span></span><span class="line"><span class="cl">% source chatgpt-venv/bin/activate  # 仮想環境の有効化
-</span></span><span class="line"><span class="cl">参考） % deactivate                   # 仮想環境の非有効化
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">% python3 -m venv chatgpt-venv      <span class="c1"># 仮想環境の作成</span>
+</span></span><span class="line"><span class="cl">% <span class="nb">source</span> chatgpt-venv/bin/activate  <span class="c1"># 仮想環境の有効化</span>
+</span></span><span class="line"><span class="cl">参考） % deactivate                  <span class="c1"># 仮想環境の非有効化</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p> </p>
@@ -98,7 +97,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% pip install openai
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">% pip install openai
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -106,7 +105,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">% export OPENAI_API_KEY=&#34;xxxxx&#34;  # Keyを環境変数にセット
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">% <span class="nb">export</span> <span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&#34;xxxxx&#34;</span>  <span class="c1"># Keyを環境変数にセット</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>コード：</p>
@@ -178,25 +177,25 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;choices&#34;: [
-</span></span><span class="line"><span class="cl">    {
-</span></span><span class="line"><span class="cl">      &#34;finish_reason&#34;: &#34;stop&#34;,
-</span></span><span class="line"><span class="cl">      &#34;index&#34;: 0,
-</span></span><span class="line"><span class="cl">      &#34;logprobs&#34;: null,
-</span></span><span class="line"><span class="cl">      &#34;text&#34;: &#34;\n\n\u306f\u3044\u3001\u5143\u6c17\u3067\u3059\u3002\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002&#34;
-</span></span><span class="line"><span class="cl">    }
-</span></span><span class="line"><span class="cl">  ],
-</span></span><span class="line"><span class="cl">  &#34;created&#34;: xxxxxxxxxx,
-</span></span><span class="line"><span class="cl">  &#34;id&#34;: &#34;xxxxxxxxxx&#34;,
-</span></span><span class="line"><span class="cl">  &#34;model&#34;: &#34;text-davinci-003&#34;,
-</span></span><span class="line"><span class="cl">  &#34;object&#34;: &#34;text_completion&#34;,
-</span></span><span class="line"><span class="cl">  &#34;usage&#34;: {
-</span></span><span class="line"><span class="cl">    &#34;completion_tokens&#34;: 25,
-</span></span><span class="line"><span class="cl">    &#34;prompt_tokens&#34;: 19,
-</span></span><span class="line"><span class="cl">    &#34;total_tokens&#34;: 44
-</span></span><span class="line"><span class="cl">  }
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;choices&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;finish_reason&#34;</span>: <span class="s2">&#34;stop&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;index&#34;</span>: 0,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;logprobs&#34;</span>: null,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;text&#34;</span>: <span class="s2">&#34;\n\n\u306f\u3044\u3001\u5143\u6c17\u3067\u3059\u3002\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">]</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;created&#34;</span>: xxxxxxxxxx,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;id&#34;</span>: <span class="s2">&#34;xxxxxxxxxx&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;model&#34;</span>: <span class="s2">&#34;text-davinci-003&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;object&#34;</span>: <span class="s2">&#34;text_completion&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;usage&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;completion_tokens&#34;</span>: 25,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;prompt_tokens&#34;</span>: 19,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;total_tokens&#34;</span>: <span class="m">44</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="nbsp"> </h2>

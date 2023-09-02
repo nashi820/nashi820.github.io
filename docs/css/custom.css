@@ -5,13 +5,6 @@
     background-color: #c0c0c0;
 }
 
-/* 記事の文字に適用されるクラス */
-.article-body{
-    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-}
-
 /* リンクのフォントが青色横線になるのを防ぐ */
 .title-link {
     text-decoration: none;
@@ -56,7 +49,7 @@ hr.border-style{
     margin-bottom:5px;
 }
 
-::selection{
+.selection h3{
     /*
     color:#fcfcfa;
     background:#ff6188;
@@ -65,8 +58,20 @@ hr.border-style{
     background:#ffff66;
 }
 
-#content{
-    font-size: 1.2rem;
+.content{
+    font-size: 18px;
+}
+
+.content h1{
+    font-size: 24px;
+}
+
+.content h2{
+    font-size: 22px;
+}
+
+.content h3{
+    font-size: 20px;
 }
 
 .foot__inner{
