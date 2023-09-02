@@ -7,28 +7,27 @@ categories = [
 Authors = "@pomera_15"
 +++
 ### 1）参考
-- クイックスタート：https://platform.openai.com/docs/quickstart
-- APIレファレンス：https://platform.openai.com/docs/api-reference/introduction
-- openai-python GitHub：https://github.com/openai/openai-python
+- openaiクイックスタート： https://platform.openai.com/docs/quickstart
+- OpenAI APIレファレンス： https://platform.openai.com/docs/api-reference/introduction
+- openai-python GitHub： https://github.com/openai/openai-python
 
 &nbsp;
 ### 2）仮想環境の構築
-```
+```bash
 % python3 -m venv chatgpt-venv      # 仮想環境の作成
 % source chatgpt-venv/bin/activate  # 仮想環境の有効化
-参考） % deactivate                   # 仮想環境の非有効化
+参考） % deactivate                  # 仮想環境の非有効化
 ```
 &nbsp;
 ### 3）OpenAI APIの実行コード
+
 準備：
-```
+```bash
 % pip install openai
 ```
-
-```
+```bash
 % export OPENAI_API_KEY="xxxxx"  # Keyを環境変数にセット
 ```
-
 コード：
 ```python
 import os
@@ -52,8 +51,10 @@ print(response)
 ```
 &nbsp; 
 ### 4）実行結果
+
 レスポンスは以下。
-```
+
+```bash
 {
   "choices": [
     {
